@@ -6,6 +6,8 @@ import android.webkit.WebView
 import android.webkit.WebViewClient
 import android.widget.EditText
 import android.widget.ImageButton
+import android.widget.Toast
+import java.net.URL
 
 class MainActivity : AppCompatActivity() {
 
@@ -26,6 +28,13 @@ class MainActivity : AppCompatActivity() {
             override fun onPageFinished(view: WebView?, url: String?) {
                 super.onPageFinished(view, url)
             }
+        }
+
+        webView.settings.javaScriptEnabled = true
+
+        goButton.setOnClickListener {
+
+                webView.loadUrl(urlEditText.text.toString())
         }
 
     }
